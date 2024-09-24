@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hassan Abusalih - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="name">Hassan Abusalih - Portfolio</h1>
+    </header>
+    
+    <section class="hidden" id="profile">
+        <div class="profile-text">
+            <img src="Untitled.png" alt="Showcase">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <p>Hi! I'm Hassan, a game programmer at the end of my Bachelor’s degree at SAE Dubai, specialized in C# and Unity. I enjoy creating engaging gameplay mechanics through clean and efficient code, which is largely why I've always been the lead programmer in my collaborative projects. In the three years since I began learning game development, I’ve also developed skills in game/level design, shaders, and VFX.</p>
+            <p>I always strive to achieve the highest quality possible in anything I work on, which pushes me to constantly learn new things and explore the limits of the tools I use. I'm passionate about games, and I love when a game goes the extra mile for those little details. As a result, I'm naturally driven to always do the same.</p>
+            <p class="links">
+                <a href="https://github.com/HassanAbusalih" target="_blank">GitHub</a> | <a href="https://hassanabusalih.itch.io/" target="_blank">itch.io</a> | <a href="www.linkedin.com/in/hassan-abusalih" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+        <button class="scroll down-arrow" onclick="scrollToSection('projects')">&#10225;</button>
+    </section>
+    
+    <section class="hidden" id="projects">
+        <div class="projects-container">
+            <div class="project-header">
+                <div class="section-title">
+                    <h2>Projects</h2>
+                </div>
+            </div>
+            <div class="project-sliders">
+                <div class="project-slider">
+                    <div class="slide-container">
+                        <div class="project-slide">
+                            <div class="project">
+                                <div class="project-title">
+                                    <h3>Psychokinetic</h3>
+                                </div>
+                                <div class="project-img">
+                                    <a href="https://devtrivedi1.itch.io/psychokinetics" target="_blank">
+                                        <img src="Psychokinetic.gif" alt="Psychokinetic">
+                                        <a href="https://devtrivedi1.itch.io/psychokinetics" target="_blank" style="font-size: large;"><u> View on itch.io</u></a>
+                                    </a>
+                                </div>
+                                <div class="project-description">
+                                    <p>My capstone project at SAE which I worked on for 6 months.</p>
+                                    <p><strong>Tools:</strong> Unity, C#</p>
+                                    <p><strong>Contribution Highlights:</strong></p>
+                                    <p>- The telekinesis mechanic, including different types of throwable items, an automatic targeting system, and all VFX/shaders associated with it.</p>
+                                    <p>- A reset system to bypass loading screens within each level, used across the entire project.</p>
+                                    <p>- The in-game screens (start, pause, level complete), as well as transitions.</p>
+                                    <p>- A myriad of smaller systems including: objectives, dialogue, player ghost, and save system.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-container">
+                        <div class="project-slide">
+                            <div class="project">
+                                <div class="project-title">
+                                    <h3>Dreadrun</h3>
+                                </div>
+                                <div class="project-img">
+                                    <a href="https://armanixboi.itch.io/dreadrun" target="_blank">
+                                        <img src="Dreadrun.jpg" alt="Dreadrun">
+                                    </a>
+                                    <a href="https://armanixboi.itch.io/dreadrun" target="_blank" style="font-size: large;"><u> View on itch.io</u></a>
+                                </div>
+                                <div class="project-description">
+                                    <p>A 3-month project I worked on during one of my studio units, which won the Juiciest Game award at SAE 2024.</p>
+                                    <p><strong>Tools:</strong> Unity, C#</p>
+                                    <p><strong>Contribution Highlights:</strong></p>
+                                    <p>- All weapons in the game.</p>
+                                    <p>- All enemies in the game.</p>
+                                    <p>- Weapon perks with stacking effects.</p>
+                                    <p>- Audio system, as well as in-game settings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-container">
+                        <div class="project-slide">
+                            <div class="project">
+                                <div class="project-title">
+                                    <h3>Please Climb</h3>
+                                </div>
+                                <div class="project-img">
+                                    <a href="https://avi75.itch.io/please-climb" target="_blank">
+                                        <img src="PleaseClimb.png" alt="Please Climb!">
+                                        <a href="https://avi75.itch.io/please-climb" target="_blank" style="font-size: large;"><u> View on itch.io</u></a>
+                                    </a>
+                                </div>
+                                <div class="project-description">
+                                    <p>A silly game made in less than 48 hours with some friends, during the 2024 Global Game Jam.</p>
+                                    <p><strong>Tools:</strong> Unity, C#</p>
+                                    <p><strong>Contributions:</strong></p>
+                                    <p>- Button prompt UI.</p>
+                                    <p>- Camera system, with close-ups of the characters using render textures.</p>
+                                    <p>- Sound effects.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="arrow left-arrow">&#10094;</button>
+                <button class="arrow right-arrow">&#10095;</button>
+                <button class="scroll up-arrow" onclick="scrollToTop()">&#10224;</button>
+            </div>
+        </div>
+        </section>    
+        
+    <script src="script.js"></script>
+</body>
+</html>
