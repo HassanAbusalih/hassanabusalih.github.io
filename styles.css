@@ -11,20 +11,26 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #8A8A97;
-    height: 8vh;
+    margin: 20px;
+    padding-left: 20px;
+}
+
+.title {
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
 }
 
 #profile, #projects {
     flex: 1;
     position: relative;
     overflow-x: hidden;
+}
+
+.name {
+    font-size: clamp(1rem, 2vw + 1rem, 2rem);
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
 }
 
 .section-title {
@@ -35,37 +41,31 @@ header {
     text-align: center;
     position: relative;
     border-radius: 50px;
-    background-color: #8A8A97;
+    background-color: #c2c2cf;
     height: 10%;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
 }
+
 .project-header{
     margin: 0 20px;
 }
+
 .profile-text img{
     align-self: center;
     width: 100%;
-    max-height: 50%;
     aspect-ratio: 16/9;
 }
 
 .profile-text {
-    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0px 20px 80px 20px;
     max-width: 1000px;
     margin: 0 auto;
-}
-
-#name {
-    font-size: clamp(12px, 2vw + 12px, 28px);
-    font-weight: 600;
-    text-align: center;
 }
 
 .links {
@@ -193,37 +193,51 @@ header {
 }
 
 .arrow {
+    width: clamp(20px, 40px + 1vw, 80px);
+    height: clamp(25px, 50px + 1vw, 100px);
+    background-image: url('horizontal-arrow.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    outline: none;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-size: clamp(1rem, 2vw + 1rem, 2rem);
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    transition: background-color 0.3s ease;
+    opacity: 0.8;
+    transition: opacity 0.5s;
 }
 
 .arrow:hover {
-    background-color: #f0f0f0;
+    opacity: 0.5;
 }
 
 .right-arrow {
-    right: 0px;
+    right: 0;
+}
+
+.left-arrow {
+    transform: rotate(180deg);
+}
+
+.arrow:disabled{
+    opacity: 0;
 }
 
 .scroll {
     position: absolute;
-    background-color: #ffffff;
+    width: clamp(25px, 25px + 1vw, 50px);
+    height: clamp(25px, 25px + 1vw, 50px);
+    background-image: url('arrow.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
     border: none;
+    outline: none;
+    position: absolute;
     cursor: pointer;
-    font-size: clamp(1rem, 2vw + 1rem, 2rem);
     padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .down-arrow{
@@ -234,6 +248,7 @@ header {
 .up-arrow {
     bottom: 5%;
     right: 1%;
+    transform: rotate(180deg);
 }
 
 .hidden {
@@ -247,4 +262,17 @@ header {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+    transition: all 1s;
+}
+
+.hidden-slide {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.show-slide {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
 }
