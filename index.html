@@ -9,14 +9,14 @@
 </head>
 <body>
     <header>
-        <div class="title">
-            <h1 class="name hidden">Hassan Abusalih - Portfolio</h1>
+        <div class="title hidden">
+            <h1 class="name">Hassan Abusalih - Portfolio</h1>
         </div>
     </header>
     
-    <section class="hidden" id="profile">
-        <div class="profile-text">
-            <div class="slideshow">
+    <section id="profile">
+        <div class="profile-text hidden">
+            <div class="slideshow hidden">
                 <img src="slide1.jpg" alt="slide1">
                 <img src="slide2.jpg" alt="slide2">
                 <img src="slide3.jpg" alt="slide3">
@@ -28,11 +28,13 @@
             </div>
             <p class="hidden">Hi! I'm Hassan, a game programmer at the end of my Bachelor’s degree at SAE Dubai, specialized in C# and Unity. I enjoy creating engaging gameplay mechanics through clean and efficient code, which is largely why I've always been the lead programmer in my collaborative projects. In the three years since I began learning game development, I’ve also developed skills in game/level design, shaders, and VFX.</p>
             <p class="hidden">I always try to achieve the highest quality possible in anything I work on, which pushes me to constantly learn new things and explore the limits of the tools I use. I'm passionate about games, and I love when a game goes the extra mile for those little details. As a result, I'm naturally driven to always do the same.</p>
-            <p class="links hidden">
-                <a href="https://github.com/HassanAbusalih" target="_blank">GitHub</a> | <a href="https://hassanabusalih.itch.io/" target="_blank">itch.io</a> | <a href="www.linkedin.com/in/hassan-abusalih" target="_blank">LinkedIn</a>
-            </p>
+            <div class="links hidden">
+                <img src="github.png" onclick="window.open('github.com/HassanAbusalih', '_blank')" title="GitHub">
+                <img src="itch-io.png" onclick="window.open('hassanabusalih.itch.io/', '_blank')" title="itch.io">
+                <img src="linkedin.png" onclick="window.open('linkedin.com/in/hassan-abusalih', '_blank')" title="LinkedIn">
+            </div>
         </div>
-        <button class="scroll down-arrow" onclick="scrollToSection('projects')"></button>
+        <button class="scroll down-arrow hidden" onclick="scrollToSection('projects')"></button>
     </section>
     
     <section class="hidden" id="projects">
@@ -42,9 +44,9 @@
                     <h2>Projects</h2>
                 </div>
             </div>
-            <div class="project-sliders">
+            <div class="project-sliders hidden">
                 <div class="project-slider">
-                    <div class="slide-container hidden">
+                    <div class="slide-container">
                         <div class="project-slide hidden-slide">
                             <div class="project">
                                 <div class="project-title">
@@ -96,7 +98,7 @@
                         <div class="project-slide hidden-slide">
                             <div class="project">
                                 <div class="project-title">
-                                    <h3>Please Climb</h3>
+                                    <h3>Please Climb!</h3>
                                 </div>
                                 <div class="project-img">
                                     <a href="https://avi75.itch.io/please-climb" target="_blank">
@@ -107,9 +109,9 @@
                                 <div class="project-description">
                                     <p>A silly game made in less than 48 hours with some friends, during the 2024 Global Game Jam.</p>
                                     <p><strong>Tools:</strong> Unity, C#</p>
-                                    <p><strong>Contributions:</strong></p>
-                                    <p>- Button prompt UI.</p>
-                                    <p>- Camera system, with close-ups of the characters using render textures.</p>
+                                    <p><strong>Contribution Highlights:</strong></p>
+                                    <p>- Button prompts, including UI and success/fail checks.</p>
+                                    <p>- Some help with the camera system, and close-ups of the characters using render textures.</p>
                                     <p>- Sound effects.</p>
 
                                 </div>
