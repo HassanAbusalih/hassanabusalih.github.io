@@ -98,13 +98,9 @@ function handleTouchMove(e) {
 function handleTouchEnd() {
     const threshold = 50;
     if (startX - endX > threshold) {
-        if (currentSlide < slides.length - 1) {
-            nextBtn.click();
-        }
+        nextBtn.click();
     } else if (endX - startX > threshold) {
-        if (currentSlide > 0) {
-            prevBtn.click();
-        }
+        prevBtn.click();
     }
 }
 
