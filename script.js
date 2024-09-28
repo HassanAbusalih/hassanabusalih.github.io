@@ -120,3 +120,5 @@ function scrollToSection(elementId) {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+particlesJS.load('particles-js', 'particlesjs-config.json');
