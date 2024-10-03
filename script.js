@@ -129,7 +129,7 @@ const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-function createShape() {
+function createShape(startOpacity) {
     const scale = 1 + Math.random() * 2;
     const shapes = [
         new THREE.BoxGeometry(scale, scale, scale),
@@ -143,22 +143,27 @@ function createShape() {
     const material = new THREE.MeshBasicMaterial({
         color: Math.random() * 0xffffff,
         transparent: true,
-        opacity: 0.1
+        opacity: startOpacity
     });
 
+    const minDistance = 5;
+
+    let posX = (Math.random() - 0.5) * 100;
+    while (Math.abs(camera.position.x - posX) < minDistance) posX = (Math.random() - 0.5) * 100;
+    let posY = (Math.random() - 0.5) * 100;
+    while (Math.abs(camera.position.y - posY) < minDistance) posY = (Math.random() - 0.5) * 100;
+
     const shape = new THREE.Mesh(geometry, material);
-    shape.position.set(
-        (Math.random() - 0.5) * 100,
-        (Math.random() - 0.5) * 100,
-        -50 - Math.random() * 100
-    );
+    shape.position.set(posX, posY, -50 - Math.random() * 100);
+    shape.moveSpeed = 0.2 + Math.random() * 0.3;
+    scene.add(shape);
 
     shape.moveSpeed = 0.2 + Math.random() * 0.3;
     scene.add(shape);
 }
 
 for (let i = 0; i < 50; i++) {
-    createShape();
+    createShape(0.1);
 }
 
 camera.position.z = 5;
@@ -171,28 +176,32 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
 });
 
-function animate() {
-    requestAnimationFrame(animate);
-    scene.children.forEach(shape => {
-        shape.position.z += shape.moveSpeed;
-        shape.rotation.x += 0.01;
-        shape.rotation.y += 0.01;
+let previousTime = performance.now();
 
-        if (shape.material.opacity < 0.5){
-            shape.material.opacity += 0.001;
+function animate() {
+    const currentTime = performance.now();
+    const deltaTime = (currentTime - previousTime) / 1000;
+    previousTime = currentTime;
+
+    scene.children.forEach(shape => {
+        shape.position.z += shape.moveSpeed * deltaTime * 60;
+        shape.rotation.x += 0.01 * deltaTime * 60;
+        shape.rotation.y += 0.01 * deltaTime * 60;
+
+        if (shape.material.opacity < 0.5) {
+            shape.material.opacity += 0.002 * deltaTime * 60;
         }
 
         if (shape.position.z >= camera.position.z) {
-            shape.position.set(
-                (Math.random() - 0.5) * 100,
-                (Math.random() - 0.5) * 100,
-                -100 - Math.random() * 200
-            );
-            shape.material.opacity = 0;
+            scene.remove(shape);
+            createShape(0);
         }
     });
 
+    camera.rotation.z += 0.002 * deltaTime * 60;
+
     renderer.render(scene, camera);
+    requestAnimationFrame(animate);
 }
 
 animate();
